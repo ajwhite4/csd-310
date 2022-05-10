@@ -1,3 +1,4 @@
+USE whatabook;
 
 -- drop test user if exists 
 DROP USER IF EXISTS 'whatabook_user'@'localhost';
@@ -9,11 +10,13 @@ CREATE USER 'whatabook_user'@'localhost' IDENTIFIED WITH mysql_native_password B
 -- grant all privileges to the pysports database to user pysports_user on localhost 
 GRANT ALL PRIVILEGES ON whatabook.* TO'whatabook_user'@'localhost';
 
+ALTER TABLE wishlist DROP FOREIGN KEY fk_book;
+ALTER TABLE wishlist DROP FOREIGN KEY fk_user;
 
 -- drop tables if they are present
 DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS wishlist;
-DROP TABLE IF EXISTS team;
+DROP TABLE IF EXISTS store;
 DROP TABLE IF EXISTS book;
 
 
