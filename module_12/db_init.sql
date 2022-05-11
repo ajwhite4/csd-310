@@ -55,13 +55,14 @@ CREATE TABLE wishlist (
 CREATE TABLE store (
     store_id    INT             NOT NULL        AUTO_INCREMENT,
     locale      VARCHAR(500)    NOT NULL,
+    hours       VARCHAR(75)     NOT NULL,
     PRIMARY KEY(store_id)
 );
 
 
 -- insert store records
-INSERT INTO store(locale)
-    VALUES('12355 W Center Rd, Omaha, NE 68144');
+INSERT INTO store(locale, hours)
+    VALUES('12355 W Center Rd, Omaha, NE 68144', '9:00am-5:00pm');
 
 -- insert book records
 INSERT INTO book(book_name, details, author) 

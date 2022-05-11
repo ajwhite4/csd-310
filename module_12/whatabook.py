@@ -50,7 +50,7 @@ def show_account_menu():
 #display location ID and address
 def show_locations(_cursor):
     #query to get location info
-    _cursor.execute('SELECT store_id, locale '+
+    _cursor.execute('SELECT store_id, locale, hours '+
                     'FROM store')
     stores = _cursor.fetchall()
         
@@ -58,7 +58,7 @@ def show_locations(_cursor):
 
     #parse through and print query results
     for store in stores:
-        print('Store ID: {}\nAddress: {}\n'.format(store[0], store[1]))
+        print('Store ID: {}\nAddress:  {}\nHours:    {}\n'.format(store[0], store[1], store[2]))
 
 
 #display books that store carries
