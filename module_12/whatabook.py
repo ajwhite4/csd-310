@@ -86,6 +86,7 @@ def validate_user():
             except:
                 print("\nInvalid Entry.")
 
+        #***USING A NEW CONNECTION JUST TO KEEP THE METHOD SIGNATURE THE SAME AS THE REQ DOC***
         db = mysql.connector.connect(**config)
         cursor = db.cursor()
         #query to validate that user exists
